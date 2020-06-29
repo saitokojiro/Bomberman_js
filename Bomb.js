@@ -54,29 +54,3 @@ function testerCollision() {
         // Collision
     }
 }*/
-
-/* anim for bomb
-body{
-  width:200px;
-  height: 200px;
-  border: 1px solid black;
-}
-
-
-div
-{
-  position: absolute;
-  top:50px;
-  left:50px;
-  
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  border-radius: 50px;
-  animation-name: example;
-  animation-duration: 0.5s;
-  
-}
-
-
-}*/
