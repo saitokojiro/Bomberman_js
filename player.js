@@ -54,6 +54,7 @@ document.addEventListener('keydown', function (e) {
         explos.Bomb
         //explos.boom()
         //explos.DeleteBomb()
+        explos.timeExplo();
     }
 
     player.style.top = posY + 'px';

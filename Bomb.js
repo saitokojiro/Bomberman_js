@@ -13,7 +13,7 @@ export default class Bomb {
         //this.newBomb.remove()
 
 
-        this.timeExplo();
+        //this.timeExplo();
 
 
     }
@@ -31,8 +31,10 @@ export default class Bomb {
     }
 
     timeExplo() {
-        setTimeout(function () {
+
+        setTimeout(() => {
             this.deleteBomb()
+            console.log(this)
         }, 1000)
     }
 
