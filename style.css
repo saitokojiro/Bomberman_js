@@ -1,0 +1,30 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+#game-zone {
+    position: relative;
+    background: gray;
+    width: 820px;
+    height: 820px;
+    border: 10px solid black;
+}
+
+#player {
+    z-index: 99z;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+    background: red;
+}
+
+.bomb {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+}
