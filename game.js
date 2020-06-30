@@ -17,15 +17,17 @@ let spawnE = () => {
 
 // -----------------Player---------------
 let player = new Player();
-player.MoveP()
+
 
 
 // ------------------Bot------------------
 let spawnOne = new Enemy(9999)
 let spawnTwo = new Enemy(99)
+spawnOne.spawnE()
+spawnTwo.spawnE()
 //let spawnThree = new Enemy()
 //let spawnFour = new Enemy()
-
+player.MoveP(spawnOne)
 spawnOne.EnemyMove()
 spawnOne.color('blue');
 //sawnOne.selectPoseManuel(150, 150)

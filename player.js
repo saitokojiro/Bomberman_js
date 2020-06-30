@@ -1,4 +1,5 @@
 import Bomb from './Bomb.js'
+import Enemy from './Enemy.js'
 export default class Player {
     constructor() {
         this.posX = 0;
@@ -14,7 +15,7 @@ export default class Player {
 
     }
 
-    MoveP() {
+    MoveP(bots) {
 
         document.addEventListener('keydown', (e) => {
             console.log(e.keyCode)
@@ -66,11 +67,16 @@ export default class Player {
                 console.log('X' + this.posX + ' Y' + this.posY)
                 let posYN = window.getComputedStyle(player).getPropertyValue('top')
                 let posXN = window.getComputedStyle(player).getPropertyValue('left')
-                let explos = new Bomb(posXN, posYN)
+                // let explos = new Bomb()
 
                 //explos.boom()
                 //explos.DeleteBomb()
-                explos.timeExplo();
+
+                //explos.createBomb(posXN, posYN);
+                // this.testCollisions(bots, explos)
+                let enemy = new Enemy(999)
+                enemy.createBomb(posXN, posYN)
+
             }
         })
 
@@ -81,8 +87,24 @@ export default class Player {
             this.explos()
         }
     */
-    explos(e) {
-
+    testCollisions(bots, es) {
+        setInterval(() => {
+            if (!(bots.posX > es.posX + this.width ||
+                    bots.posX < es.posX - es.width ||
+                    bots.posY > es.posY + this.height ||
+                    bots.posY < es.posY - this.height)) {
+                // Collision
+                /*this.posX += 50
+                this.posY += 50
+                bots.style.background = 'green';
+                bots.newEnemy.style.zIndex = '999'*/
+                bots.remove();
+                console.log('toucher')
+            }
+            /*else(
+                           //this.newEnemy.style.background = 'blue'
+                       )*/
+        }, 500);
     }
 
     //spawnE();
