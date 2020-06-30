@@ -32,8 +32,11 @@ export default class Bomb {
   }
 
   animExplo() {
-    this.newBomb.className = "activate";
-    this.newBomb.style.transform = "translate(-50%, -50%)";
+    //this.newBomb.className = "activate";
+    this.animCss();
+    this.newBomb.style.top = this.posY;
+    this.newBomb.style.left = this.posX;
+    //this.newBomb.style.transform = "translate(-50%, -50%)";
     setTimeout(() => {
       this.deleteBomb();
       console.log(this);
@@ -43,14 +46,24 @@ export default class Bomb {
   deleteBomb() {
     this.newBomb.remove();
   }
+
+  animCss() {
+    this.newBomb.style.position = "absolute";
+    this.newBomb.style.width = "200px";
+    this.newBomb.style.height = "200px";
+    this.newBomb.style.border = "1px solid black";
+    this.newBomb.style.borderRadius = "100px";
+    this.newBomb.style.transform = "translate(-38% , -37% )";
+    this.newBomb.style.animationName = "explos";
+    this.newBomb.style.animationDuration = "0.5s";
+
+  }
+
 }
+
+
 /*
 Collision
 function testerCollision() {
-    if (!(spriteBX > spriteAX + largeurSpriteA ||
-            spriteBX < spriteAX - largeurSpriteB ||
-            spriteBY > spriteAY + hauteurSpriteA ||
-            spriteBY < spriteAY - hauteurSpriteB)) {
-        // Collision
-    }
+    dddd
 }*/
