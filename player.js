@@ -18,7 +18,7 @@ export default class Player {
     MoveP(bots) {
 
         document.addEventListener('keydown', (e) => {
-            console.log(e.keyCode)
+            //console.log(e.keyCode)
             if (e.key === 'z') {
                 if (this.posY === 0) {
                     this.posY -= 0;
@@ -26,7 +26,7 @@ export default class Player {
                     this.posY -= 50;
                     this.player.style.top = this.posY + 'px';
 
-                    console.log(this.posY)
+                    //console.log(this.posY)
                 }
 
             }
@@ -37,7 +37,7 @@ export default class Player {
                     this.posY += 50;
                     this.player.style.top = this.posY + 'px';
 
-                    console.log(this.posY)
+                    //console.log(this.posY)
                 }
 
             }
@@ -48,7 +48,7 @@ export default class Player {
                     this.posX += 50;
 
                     this.player.style.left = this.posX + 'px';
-                    console.log(this.posX)
+                    //console.log(this.posX)
                 }
             }
 
@@ -60,52 +60,78 @@ export default class Player {
                     this.posX -= 50;
 
                     this.player.style.left = this.posX + 'px';
-                    console.log(this.posX)
+                    //console.log(this.posX)
                 }
             }
-            if (e.keyCode == '32') {
-                console.log('X' + this.posX + ' Y' + this.posY)
-                let posYN = window.getComputedStyle(player).getPropertyValue('top')
-                let posXN = window.getComputedStyle(player).getPropertyValue('left')
-                // let explos = new Bomb()
 
-                //explos.boom()
-                //explos.DeleteBomb()
-
-                //explos.createBomb(posXN, posYN);
-                // this.testCollisions(bots, explos)
-                let enemy = new Enemy(999)
-                enemy.createBomb(posXN, posYN)
-
-            }
         })
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*
         controller(forward, backward, left, right, e) {
 
             this.explos()
         }
     */
-    testCollisions(bots, es) {
-        setInterval(() => {
-            if (!(bots.posX > es.posX + this.width ||
-                    bots.posX < es.posX - es.width ||
-                    bots.posY > es.posY + this.height ||
-                    bots.posY < es.posY - this.height)) {
-                // Collision
-                /*this.posX += 50
-                this.posY += 50
-                bots.style.background = 'green';
-                bots.newEnemy.style.zIndex = '999'*/
-                bots.remove();
-                console.log('toucher')
-            }
-            /*else(
-                           //this.newEnemy.style.background = 'blue'
-                       )*/
-        }, 500);
-    }
+    // testCollisions(bots, es) {
+    //     setInterval(() => {
+    //         if (!(bots.posX > es.posX + this.width ||
+    //                 bots.posX < es.posX - es.width ||
+    //                 bots.posY > es.posY + this.height ||
+    //                 bots.posY < es.posY - this.height)) {
+    //             // Collision
+    //             /*this.posX += 50
+    //             this.posY += 50
+    //             bots.style.background = 'green';
+    //             bots.newEnemy.style.zIndex = '999'*/
+    //             bots.remove();
+    //             console.log('toucher')
+    //         }
+    //         /*else(
+    //                        //this.newEnemy.style.background = 'blue'
+    //                    )*/
+    //     }, 500);
+    // }
 
     //spawnE();
     //spawnE();
