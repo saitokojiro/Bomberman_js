@@ -36,55 +36,26 @@
     position: absolute;
     width: 50px;
     height: 50px;
-    /* background-color: blue;*/
+    /*transform: translate(-34%, -34%);*/
+    background-color: blue;
 
 }
 
 @keyframes explos {
     0% {
-        -webkit-transform: scale(0.5)
-            /*!translate(-38%, -37%)*/
+        -webkit-transform: scale(0.5) translate(-34%, -34%);
         ;
-        transform: scale(0.5)
-            /*!translate(-38%, -37%)*/
+        transform: scale(0.5),
+            translate(-34%, -34%);
         ;
-        /*!transform-origin: center*/
+
     }
 
     100% {
-        -webkit-transform: scale(1)
-            /*!translate(-38%, -37%)*/
+        -webkit-transform: scale(1) translate(-34%, -34%);
         ;
-        transform: scale(1)
-            /*!translate(-38%, -37%)*/
+        transform: scale(1) translate(-34%, -34%);
         ;
-        /*!transform-origin: center;*/
+
     }
 }
-
-
-/* anim for bomb
-body{
-  width:200px;
-  height: 200px;
-  border: 1px solid black;
-}
-
-
-div
-{
-  position: absolute;
-  top:50px;
-  left:50px;
-  
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  border-radius: 50px;
-  animation-name: example;
-  animation-duration: 0.5s;
-  
-}
-
-
-}*/
