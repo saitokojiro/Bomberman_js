@@ -1,44 +1,73 @@
 import Enemy from './Enemy.js'
+import Bomb from './Bomb.js'
 import Player from './player.js'
 
-let spawnE = () => {
-    let newSpawn = new Enemy()
-    newSpawn.EnemyMove()
 
-    newSpawn.spawnE()
-    setInterval(
-        () => {
-            console.log('X : ' + newSpawn.posX + ' Y : ' + newSpawn.posY)
-            newSpawn
-        }, 1000
-    )
+//------------Variable------------------
 
-}
+let restart = true;
+let winner = true
+let buttonRestart = document.querySelector('.restartG')
+
+// ------------------Bot------------------
+let spawnOne = new Enemy();
+let spawnTwo = new Enemy();
+let spawnThree = new Enemy();
+let spawnFour = new Enemy();
+
+//------- listMonster----------
+
+let monster = [spawnOne, spawnTwo, spawnThree, spawnFour]
+
+//------- spawn------------
+spawnOne.spawnE();
+spawnTwo.spawnE();
+spawnThree.spawnE();
+spawnFour.spawnE();
+
+//------- move------------
+spawnOne.EnemyMove();
+spawnTwo.EnemyMove();
+spawnThree.EnemyMove();
+spawnFour.EnemyMove();
+
+spawnOne.color('blue');
 
 // -----------------Player---------------
 let player = new Player();
-
-
-
-// ------------------Bot------------------
-let spawnOne = new Enemy(9999)
-let spawnTwo = new Enemy(99)
-spawnOne.spawnE()
-spawnTwo.spawnE()
-//let spawnThree = new Enemy()
-//let spawnFour = new Enemy()
-player.MoveP(spawnOne)
-spawnOne.EnemyMove()
-spawnOne.color('blue');
-//sawnOne.selectPoseManuel(150, 150)
-//spawnOne.collisionSystemBetweenEnemy(spawnTwo.getBoundings(this))
-//spawnTwo.selectPoseManuel(100, 150)
-spawnTwo.EnemyMove()
-//spawnTwo.color('yellow')
-//spawnThree.EnemyMove()
-//spawnFour.EnemyMove()
-console.log(" 999999999999999999999")
-spawnOne.testCollision(spawnTwo)
-
+player.MoveP();
 
 //---------------Boom--------------
+
+let bombCal = new Bomb();
+
+bombCal.keyboom(monster);
+
+
+
+//----------------------------
+
+setInterval(() => {
+    if (document.querySelectorAll('.enemy').length === 0 && winner === true) {
+        alert("Winner !!!!")
+        winner = false
+    }
+}, 1000);
+
+
+
+
+buttonRestart.addEventListener('click', () => {
+    let element = document.querySelectorAll('.enemy')
+    console.log(element.length)
+    winner = true
+
+    if (element.length === 0) {
+        console.log('ok')
+        spawnOne.spawnE();
+        spawnTwo.spawnE();
+        spawnThree.spawnE();
+        spawnFour.spawnE();
+        bombCal.score = 0
+    }
+})

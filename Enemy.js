@@ -1,4 +1,5 @@
 export default class Enemy {
+
   constructor(indx) {
     // this.posX = /*150 + x */ this.getRandomInt(12) * 50;
     // this.posY = /*150 + y*/ this.getRandomInt(12) * 50;
